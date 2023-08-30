@@ -19,10 +19,12 @@ from django.urls import path
 
 from core.views import frontpage, contact, about
 from store.views import prduct_detail, category_detail
+from cart.views import cart
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', frontpage, name="frontpage"),
+    path('cart/', cart, name="cart"),
     path('contact/', contact, name="contact"),
     path('about/', about, name="about"),
     path('<slug:category_slug>/<slug:slug>/', prduct_detail, name="product_detail"),
